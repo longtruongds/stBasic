@@ -1,10 +1,9 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[ ]:
-
 
 import streamlit as st
+import numpy as np
 
 # Insert elements using "with" notation
 with st.container():
