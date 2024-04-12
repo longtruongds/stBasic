@@ -38,7 +38,16 @@ def authenticate_user():
             st.text_input(label="Password", value="", key="passwd", type="password", on_change=creds_entered)
             return False
 
-        
+def plot_a_graph():
+    # Create a DataFrame with random integers
+    df = pd.DataFrame(np.random.randint(0, 100, size=(10, 2)), columns=['Column1', 'Column2'])
+    
+    # Create a line chart using Plotly Express
+    fig = px.line(df, x=df.index, y=['Column1', 'Column2'], title='Random Data Line Chart')
+    
+    # Display the chart in Streamlit
+    st.plotly_chart(fig)
+    
         
 # Create a dictionary to store usernames and passwords
 user_credentials = {
@@ -49,14 +58,15 @@ user_credentials = {
 
 
 if authenticate_user():
-    # Create a DataFrame with random integers
-    df = pd.DataFrame(np.random.randint(0, 100, size=(10, 2)), columns=['Column1', 'Column2'])
+    plot_a_graph()
+#     # Create a DataFrame with random integers
+#     df = pd.DataFrame(np.random.randint(0, 100, size=(10, 2)), columns=['Column1', 'Column2'])
     
-    # Create a line chart using Plotly Express
-    fig = px.line(df, x=df.index, y=['Column1', 'Column2'], title='Random Data Line Chart')
+#     # Create a line chart using Plotly Express
+#     fig = px.line(df, x=df.index, y=['Column1', 'Column2'], title='Random Data Line Chart')
     
-    # Display the chart in Streamlit
-    st.plotly_chart(fig)
+#     # Display the chart in Streamlit
+#     st.plotly_chart(fig)
 
 
 # In[ ]:
